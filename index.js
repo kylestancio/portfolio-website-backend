@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.json({"test": "Test"})
 })
 
+app.get('/get/file/:filename', (req, res) => {
+  res.sendFile(__dirname + '/files/' + req.params.filename)
+})
+
 app.get('/get/image/:filename', (req, res) => {
   res.sendFile(__dirname + '/images/' + req.params.filename)
 })
