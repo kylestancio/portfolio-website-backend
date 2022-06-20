@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express()
 require('dotenv').config()
 
-app.use(cors())
+if (process.env.NODE_ENV=='development') app.use(cors());
 
 app.get('/', (req, res) => {
   res.json({"test": "Test"})
